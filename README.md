@@ -1,5 +1,7 @@
 # Smart Factory Network – Industrie 4.0
 
+![Smart Factory Network – Topologie](topology.png)
+
 ##
 
 ## Projektbeschreibung
