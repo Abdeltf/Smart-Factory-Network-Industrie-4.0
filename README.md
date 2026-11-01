@@ -1,6 +1,6 @@
 # Smart Factory Network – Industrie 4.0
 
-![Smart Factory Network – Topologie](topology.png)
+![Smart Factory Network – Topologie](Topology-Final.png)
 
 ## Monitoring-Dashboard
 
@@ -10,7 +10,6 @@ Der Monitoring-Server befindet sich im Produktionsnetzwerk (VLAN 20) und stellt 
 
 Das Dashboard visualisiert den Netzwerkstatus der Produktionsgeräte. Die angezeigten Statuswerte sind statisch und dienen der Demonstration.
 
-##
 
 ## Projektbeschreibung
 
@@ -37,6 +36,8 @@ Das Netzwerk ist in zwei logische Bereiche unterteilt: ein Office-Netzwerk und e
 - IPv4 und Subnetzmasken
 - Extended Access Control Lists (ACLs)
 - ICMP und TCP
+- HTTP-Server
+- HTML (statisches Dashboard)
 
 ## Netzwerkstruktur
 
@@ -45,7 +46,7 @@ Das Netzwerk besteht aus zwei VLANs:
 | VLAN    | Name       | Netzwerk        | Geräte   |
 | ------- | ---------- | --------------- | -------- |
 | VLAN 10 | OFFICE     | 192.168.10.0/24 | PC0, PC1 |
-| VLAN 20 | PRODUCTION | 192.168.20.0/24 | PC2, PC3 |
+| VLAN 20 | PRODUCTION | 192.168.20.0/24 | PC2, PC3, Monitoring |
 
 ### IP-Adressierung
 
@@ -55,7 +56,7 @@ Das Netzwerk besteht aus zwei VLANs:
 | PC1   | 192.168.10.11 | 192.168.10.1    |
 | PC2   | 192.168.20.10 | 192.168.20.1    |
 | PC3   | 192.168.20.11 | 192.168.20.1    |
-| Monitoring-Server | 192.168.20.20 | VLAN 20 |
+| Monitoring-Server | 192.168.20.20 | 192.168.20.1 |
 
 ## Technische Umsetzung
 
@@ -63,7 +64,7 @@ Das Netzwerk besteht aus zwei VLANs:
 
 Ich habe VLAN 10 für das Office-Netzwerk und VLAN 20 für das Produktionsnetzwerk eingerichtet.
 
-Die Switchports Fa0/1 und Fa0/2 gehören zu VLAN 10. Die Ports Fa0/3 und Fa0/4 gehören zu VLAN 20.
+Die Switchports Fa0/1 und Fa0/2 gehören zu VLAN 10. Die Ports Fa0/3, Fa0/4 und Fa0/5 gehören zu VLAN 20.
 
 Dadurch werden die Geräte logisch in zwei getrennte Netzwerke aufgeteilt.
 
