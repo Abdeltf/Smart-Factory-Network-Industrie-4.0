@@ -2,6 +2,14 @@
 
 ![Smart Factory Network – Topologie](topology.png)
 
+## Monitoring-Dashboard
+
+Der Monitoring-Server befindet sich im Produktionsnetzwerk (VLAN 20) und stellt eine einfache Weboberfläche über HTTP bereit.
+
+![Smart Factory Monitoring Dashboard](Dashboard.png)
+
+Das Dashboard visualisiert den Netzwerkstatus der Produktionsgeräte. Die angezeigten Statuswerte sind statisch und dienen der Demonstration.
+
 ##
 
 ## Projektbeschreibung
@@ -47,6 +55,7 @@ Das Netzwerk besteht aus zwei VLANs:
 | PC1   | 192.168.10.11 | 192.168.10.1    |
 | PC2   | 192.168.20.10 | 192.168.20.1    |
 | PC3   | 192.168.20.11 | 192.168.20.1    |
+| Monitoring-Server | 192.168.20.20 | VLAN 20 |
 
 ## Technische Umsetzung
 
