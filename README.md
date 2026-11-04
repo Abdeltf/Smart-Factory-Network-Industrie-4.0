@@ -135,10 +135,13 @@ Zusätzlich enthält das Repository eine eigenständige Python-Anwendung mit gra
 - Speicherung der Ergebnisse in `monitoring_log.csv`.
 - Laden früherer Ergebnisse und Anzeige der letzten Einträge über **View History**.
 
-Die zu prüfenden Geräte und IP-Adressen werden im `devices`-Dictionary in `python-monitor/monitor.py` festgelegt. In der aktuell veröffentlichten Quellcode-Version sind als Demo-Ziele **My Computer** (`127.0.0.1`) und **Local Router** (`192.168.1.1`) eingetragen. Diese Einträge prüfen den lokalen Rechner und einen Router im lokalen Netzwerk; sie entsprechen nicht den IP-Adressen der Packet-Tracer-Produktionsgeräte. Für andere Umgebungen können die Zielnamen und IP-Adressen im `devices`-Dictionary angepasst werden. Die Anwendung überwacht nur IP-Adressen, die vom Windows-Rechner aus erreichbar sind; sie greift nicht automatisch auf simulierte Packet-Tracer-Geräte zu.
+![Python Network Monitor – Dashboard](python-monitor/Python_dashboard.PNG)
 
-**Quellcode:** [`python-monitor/monitor.py`](python-monitor/monitor.py)  
-**Ordner:** [`python-monitor/`](python-monitor/)
+**Windows-Anwendung:** [SmartFactoryMonitor.exe herunterladen](python-monitor/SmartFactoryMonitor.exe)  
+**Quellcode:** [python-monitor/monitor.py](python-monitor/monitor.py)  
+**Ordner:** [python-monitor/](python-monitor/)
+
+Die zu prüfenden Geräte und IP-Adressen werden im `devices`-Dictionary in `python-monitor/monitor.py` festgelegt. In der aktuell veröffentlichten Quellcode-Version sind als Demo-Ziele **My Computer** (`127.0.0.1`) und **Local Router** (`192.168.1.1`) eingetragen. Diese Einträge prüfen den lokalen Rechner und einen Router im lokalen Netzwerk; sie entsprechen nicht den IP-Adressen der Packet-Tracer-Produktionsgeräte. Für andere Umgebungen können die Zielnamen und IP-Adressen im `devices`-Dictionary angepasst werden. Die Anwendung überwacht nur IP-Adressen, die vom Windows-Rechner aus erreichbar sind; sie greift nicht automatisch auf simulierte Packet-Tracer-Geräte zu.
 
 ## Nachweise und Screenshots
 
@@ -146,13 +149,7 @@ Die zu prüfenden Geräte und IP-Adressen werden im `devices`-Dictionary in `pyt
 
 ![VLAN-Konfiguration](Vlan%20configuration.png)
 
-### Port Security
-
-![Port-Security-Konfiguration](Port%20security.png)
-
-### SSH-Remote-Administration
-
-![SSH-Remote-Administration](SSH-Remote-Administration.PNG)
+Die Nachweise zu Port Security und SSH sind bereits in den entsprechenden Abschnitten der Sicherheitskonfiguration eingebunden, damit sie nicht doppelt angezeigt werden.
 
 ## Testergebnisse
 
@@ -173,17 +170,18 @@ Die zu prüfenden Geräte und IP-Adressen werden im `devices`-Dictionary in `pyt
 ```text
 Smart-Factory-Network-Industrie-4.0/
 ├── python-monitor/
-│   └── monitor.py
+│   ├── monitor.py
+│   ├── SmartFactoryMonitor.exe
+│   └── Python_dashboard.PNG
 ├── SmartFactoryNetwork-V2.pkt
 ├── Topology-Final.png
+├── topology.png
 ├── Dashboard.png
 ├── Vlan configuration.png
 ├── Port security.png
 ├── SSH-Remote-Administration.PNG
 └── README.md
 ```
-
-Weitere Dateien im Ordner `python-monitor/` sind direkt im Repository verfügbar.
 
 ## Projektdatei öffnen
 
@@ -195,6 +193,13 @@ Weitere Dateien im Ordner `python-monitor/` sind direkt im Repository verfügbar
 ## Python-Anwendung starten
 
 Die Python-Anwendung ist für Windows vorgesehen, da sie den Windows-Ping-Befehl (`ping -n`) verwendet.
+
+**Variante A – Windows-Anwendung**
+
+1. [SmartFactoryMonitor.exe herunterladen](python-monitor/SmartFactoryMonitor.exe).
+2. Die heruntergeladene Datei unter Windows starten.
+
+**Variante B – Python-Quellcode**
 
 1. Python 3 installieren, falls es noch nicht vorhanden ist.
 2. Das Verzeichnis `python-monitor` öffnen.
